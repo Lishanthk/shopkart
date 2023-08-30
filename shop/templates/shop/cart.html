@@ -1,0 +1,45 @@
+{% extends 'shop/main.html' %}
+
+{% block title %}
+collections | Shopkart
+{% endblock title%}
+{% block content %}
+  
+
+
+    <section class="bg-light py-4 my-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h4 class="mb-3">Cart items</h4>
+            <hr style="border-color:danger">
+          </div>
+
+          <table class="table table-bordered">
+            <tr>
+              <td>Image</td>
+              <td>Product Name</td>
+              <td>Quantity</td>
+              <td>Total amount</td>
+              <td>Remove</td>
+            </tr>
+
+            {% for d in cart %}
+            <tr>
+              <td><img src='{{d.products.product_image.url}}' height='75px' alt='{{d.products.name}}'></td>
+              <td>{{d.products.name}}</td>
+              <td>{{d.products_qty}}</td>
+              <td>{{d.total_cost | stringformat:'d'}}</td>
+              <td><a href="{% url 'remove_cart' d.id %}" onclick="return confirm('Are you sure ? to remove')" class="btn btn-danger btn-sm"><i class='fa fa-trash'></i>Remove</a></td>
+            </tr>
+            {% endfor%}
+          </table>
+          
+
+          
+          
+          
+        </div>
+      </div>
+    </section>
+{% endblock content %}

@@ -1,0 +1,62 @@
+{% extends 'shop/main.html' %}
+
+{% block title %}
+ Registration | Shopkart
+{% endblock title%}
+
+
+{% block content %}
+  
+    <div class="" style="padding-top:40px;">  
+      <section class="vh-100">
+        <div class="container py-5 h-100  text-black" style="border-radius: 25px;">
+          <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+              <form method="POST" action="">
+                {% csrf_token %}
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <label for="" class="form-label" >User Name</label>
+                  <input type="text" name="username" id="username" class="form-control form-control-lg"  placeholder="Enter Username" />
+                </div>
+      
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <label for="" class="form-label" >Password</label>
+                  <input type="password" name="password" id="password" class="form-control form-control-lg" placeholder="Enter Username" />
+                </div>
+      
+                
+      
+                <!-- Submit button -->
+                <div class="pt-1 mb-4">
+                  <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                </div>
+    
+                <p class=" mb-2 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
+                <p>Don't have an account? <a href="{% url 'register' %}" class="link-primary">Register here</a></p>
+      
+                <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
+                  role="button">
+                  <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+                </a>
+                <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!"
+                  role="button">
+                  <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
+      
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+
+            
+  
+{% endblock content %}

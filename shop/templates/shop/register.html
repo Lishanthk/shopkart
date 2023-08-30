@@ -1,0 +1,138 @@
+{% extends 'shop/main.html' %}
+
+{% block title %}
+ Registration | Shopkart
+{% endblock title%}
+
+
+{% block content %}
+  
+{% include 'shop/message.html' %}
+        
+
+      {% comment %} </div>
+      <section class="py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <form method="POST" action="">
+                {% csrf_token %} 
+                <div class="mb-4">
+                  <label for="" class="form-label">User Name</label>
+                  {{form.username}}
+                  {% if form.errors.username %}
+                    <label class='text-danger'>{{ form.errors.username }}</label>
+                  {% endif %}
+                </div>
+                <div class="mb-4">
+                  <label for="" class="form-label" >User Email</label>
+                  {{form.email}}
+                  {% if form.errors.username %}
+                    <label class='text-danger'>{{ form.errors.email }}</label>
+                  {% endif %}
+                </div>
+                <div class="mb-4">
+                  <label for="" class="form-label">Password</label>
+                  {{form.password1}}
+                  {% if form.errors.username %}
+                    <label class='text-danger'>{{ form.errors.password1 }}</label>
+                  {% endif %}
+                </div>
+                <div class="mb-4">
+                  <label for="" class="form-label">Confirm Password</label>
+                  {{form.password2}}
+                  {% if form.errors.username %}
+                    <label class='text-danger'>{{ form.errors.password2 }}</label>
+                  {% endif %}
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+              </form>
+              <p class="my-2">Already user ? <a href="{% url 'login' %}">Login Now</a> </p>
+            </div>
+          </div>
+        </div>
+      </section> {% endcomment %}
+
+
+
+            
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="" style="padding-top:0px">
+  <section class="vh-100 " >
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class=" text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registration-page</p>
+                  <form method="POST" action="">
+                    {% csrf_token %} 
+                    <div class="mb-4">
+                      <label for="" class="form-label">User Name</label>
+                      {{form.username}}
+                      {% if form.errors.username %}
+                        <label class='text-danger'>{{ form.errors.username }}</label>
+                      {% endif %}
+                    </div>
+                    <div class="mb-4">
+                      <label for="" class="form-label" >User Email</label>
+                      {{form.email}}
+                      {% if form.errors.username %}
+                        <label class='text-danger'>{{ form.errors.email }}</label>
+                      {% endif %}
+                    </div>
+                    <div class="mb-4">
+                      <label for="" class="form-label">Password</label>
+                      {{form.password1}}
+                      {% if form.errors.username %}
+                        <label class='text-danger'>{{ form.errors.password1 }}</label>
+                      {% endif %}
+                    </div>
+                    <div class="mb-4">
+                      <label for="" class="form-label">Confirm Password</label>
+                      {{form.password2}}
+                      {% if form.errors.username %}
+                        <label class='text-danger'>{{ form.errors.password2 }}</label>
+                      {% endif %}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                  </form>
+                  <p class="my-2">Already user ? <a href="{% url 'login' %}">Login Now</a> </p>
+  
+                  
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+  
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                    class="img-fluid" alt="Sample image">
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock content %}

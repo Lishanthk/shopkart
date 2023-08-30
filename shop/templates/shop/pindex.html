@@ -1,0 +1,34 @@
+{% extends 'shop/main.html' %}
+{% block content %}
+
+<section class="bg-light py-4 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3">{{catagory_name}} products</h4>
+                <hr style="border-color:#b8bfc2;">
+            </div>
+            {% for d in products %}
+            <div class="col-md-4 col-lg-3">
+              <div class="card m-4 p-4">
+                <img src="{{d.product_image.url}}" class="card-img-top" alt="my img">
+                <a href="{% url 'prodetails' catagory_name d.name %}">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">{{ d.name }}</h5>
+                  <p class="card-text">
+                    <span class="float-start old_price text-danger"><s>Rs.{{ d.orginal_price | stringformat:'d'}}</s></span>
+                    <span class="float-end new_price bg-success text-white rounded">Rs.{{ d.offer_price | stringformat:'d'}}</span>
+
+                  </p>
+                </div>
+              </a>
+              </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}
